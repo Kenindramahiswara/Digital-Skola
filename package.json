@@ -10,7 +10,9 @@
 
     "scripts": {
 
-      "test": "mocha test --recursive --timeout 5000 --reporter spec"
+      "test": "mocha test --recursive --timeout 5000 --reporter spec",
+      "test-report-html": "mocha test --recursive --reporter mocha-simple-html-reporter --reporter-options output=report.html",
+      "test-report-json": "mocha test --recursive --reporter json > test-results.json"
 
     },
 
