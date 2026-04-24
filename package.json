@@ -8,14 +8,17 @@
 
     "scripts": {
 
-        "test": "mocha test --recursive --timeout 60000",
+        "test": "mocha test/Test-1.js --recursive --timeout 60000",
+        "test2": "mocha Test/Specs --recursive --timeout 60000",
         "reportmochawesome": "mocha test --recursive --timeout 60000 --reporter mochawesome",
         "reportsimple-html": "mocha test --recursive --timeout 60000 --reporter mocha-simple-html-reporter --reporter-options output=report.html"
     },
 
     "dependencies": {
 
-        "selenium-webdriver": "^4.17.0"
+        "selenium-webdriver": "^4.17.0",
+        "pixelmatch": "^7.1.0",
+        "pngjs": "^7.0.0"
 
     },
 
