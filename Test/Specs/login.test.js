@@ -45,9 +45,9 @@ describe('Login Test', function(){
         await loginAction.clickLoginButton();
         await loginAction.assertLoginFailed('Epic sadface: Username and password do not match any user in this service');
 
-        await sharingAction.fullPageScreenshot('login_failed_empty_username');
+        await sharingAction.fullPageScreenshot('login_failed_invalid_username');
 
-        await compareScreenshot(driver, 'failed_login')
+        await compareScreenshot(driver, 'failed_login_invalid_username')
     });
 
     it('Login with invalid password', async () => {
@@ -56,9 +56,9 @@ describe('Login Test', function(){
         await loginAction.clickLoginButton();
         await loginAction.assertLoginFailed('Epic sadface: Username and password do not match any user in this service');
 
-        await sharingAction.fullPageScreenshot('login_failed_empty_username');
+        await sharingAction.fullPageScreenshot('login_failed_invalid_password');
 
-        await compareScreenshot(driver, 'failed_login')
+        await compareScreenshot(driver, 'failed_login_invalid_username')
     });
 
     it('Login with empty username', async () => {
@@ -68,7 +68,7 @@ describe('Login Test', function(){
 
         await sharingAction.fullPageScreenshot('login_failed_empty_username');
 
-        await compareScreenshot(driver, 'failed_login')
+        await compareScreenshot(driver, 'failed_login_empty_username')
     });
 
     it('Login with empty password', async () => {
@@ -78,6 +78,6 @@ describe('Login Test', function(){
 
         await sharingAction.fullPageScreenshot('login_failed_empty_password');
         
-        await compareScreenshot(driver, 'failed_login2')
+        await compareScreenshot(driver, 'failed_login_empty_password')
     });
 })
