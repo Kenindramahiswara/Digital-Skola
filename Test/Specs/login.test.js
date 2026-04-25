@@ -80,4 +80,15 @@ describe('Login Test', function(){
         
         await compareScreenshot(driver, 'failed_login_empty_password')
     });
+
+        it.only('Login with locked user', async () => {
+        await loginAction.inputUsername('locked_out_user');
+        await loginAction.inputPassword('secret_sauce');
+        await loginAction.clickLoginButton();
+        await loginAction.assertLoginFailed('Epic sadface: Sorry, this user has been locked out.');
+
+        await sharingAction.fullPageScreenshot('login_failed_locked_user');
+        
+        await compareScreenshot(driver, 'failed_login_locked_user')
+    });
 })
